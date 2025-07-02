@@ -42,7 +42,7 @@ Box:'sap/m/MessageBox'
 			<OverflowToolbar>
 				<ToolbarSpacer/>
 				<Button text="Accept" type="Accept" press="onPress" />
-				<Button text="Product List" type="Reject" press="onList" />
+				<Button text="Product List Ch" type="Reject" press="onList" />
 				<Button text="Edit 1" press="Box.show('Box pressed')"/>
 				<Button text="Delete" />
 			</OverflowToolbar>

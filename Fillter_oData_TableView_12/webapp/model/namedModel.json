@@ -1,0 +1,27 @@
+{
+						"CountSweets": "2",
+						"SweetsSupplier": [
+							{
+								"ID": 3,
+								"Name": "Sweet Magic Pawan3",
+								"Address": {
+									"Street": "Sivarao Street3",
+									"City": "Vijayawada",
+									"State": "Andhra Pradesh",
+									"ZipCode": "521456",
+									"Country": "INDIA3"
+								}
+							},
+							{
+								"ID": "1",
+								"Name": "Aanjaneya Sweets_1",
+								"Address": {
+									"Street": "Bhavanipuram",
+									"City": "Vijayawada",
+									"State": "Andhra Pradesh",
+									"ZipCode": "521456",
+									"Country": "INDIA_1"
+								}
+							}
+						]
+					}

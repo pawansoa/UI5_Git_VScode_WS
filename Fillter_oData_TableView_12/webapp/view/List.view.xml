@@ -1,0 +1,57 @@
+<mvc:View controllerName="satya.prasad.mvcapp.controller.List" 
+xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" core:require="{
+	Util:'satya/prasad/mvcapp/utlities/utlities'
+}">
+	<Page id="pid_1" title="Sweet Suppliers">
+		<content>
+			<Table id="tbid_1" items="{ODATA>/ProductSet}" class="sapUiResponsiveMargin" width="auto">
+				<headerToolbar>
+					<Toolbar id="tbar_1">
+						<Label id="l_id" text="Number of Sweets Suppliers"/>
+						<ToolbarSpacer ></ToolbarSpacer>
+						<SearchField width="30%" search="onSearch"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="cl_id1">
+						<header><Text id="tl_id1" text="Product ID"/></header>
+					</Column>
+					<Column id="cl_id2">
+						<header><Text id="cl_id3" text="Product Name"/></header>
+					</Column>
+					<Column id="cl_id9">
+						<header><Text id="cl_id10" text="Weight"/></header>
+					</Column>
+					<Column id="cl_id_p">
+						<header><Text id="cl_id_p_t" text="Price"/></header>
+					</Column>
+					<Column id="cl_id_p_c">
+						<header><Text id="cl_id_p_t_c" text="Category"/></header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="cl_id4" type="Navigation" press="onListItemPress">
+						<cells>
+							<ObjectIdentifier id="cl_id5" text="{ODATA>ProductID}"/>
+							<ObjectIdentifier id="cl_id6" text="{ODATA>Name}"/>
+							<ObjectNumber id="cl_id11" number="{ODATA>WeightMeasure}" unit="{ODATA>WeightUnit}" state="{
+								parts: [{path:'ODATA>WeightMeasure'},{path:'ODATA>WeightUnit'}],
+								formatter: 'Util.formatterFunction'
+							}"/>
+							<!--<Text text="{
+								parts:[{path:'ODATA>Price'},{path:'ODATA>CurrencyCode'}],
+								type:'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure:false}
+							}"/>-->
+							<Text text="{
+								parts:[{path:'ODATA>Price'},{path:'ODATA>CurrencyCode'}],
+								type:'sap.ui.model.type.Currency'
+							}"/>
+							<ObjectIdentifier id="cl_id6_c" text="{ODATA>Category}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

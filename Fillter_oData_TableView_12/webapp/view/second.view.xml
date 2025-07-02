@@ -1,0 +1,51 @@
+<mvc:View controllerName="satya.prasad.mvcapp.controller.second" xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" core:require="{
+formatMessage:'sap/base/strings/formatMessage',
+Box:'sap/m/MessageBox'
+}"
+	>
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
+		<content>
+			<ObjectHeader title="{Name}" number="{ID}">
+				<attributes>
+					<ObjectAttribute text="{Address/Country}"/>
+				</attributes>
+			</ObjectHeader>
+			<f:SimpleForm title="Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin">
+				<f:content>
+					<Label text="Name"></Label>
+					<Input value="{= ${Name} === 'Sweet Magic Pawan' ? 'Sweet Magic Pawan' : 'Pawan Sweet'}"></Input>					
+					<Label text="ID"></Label>
+					<Input value="{ID}"></Input>
+					<Label text="Country"></Label>
+					<Input value="{Address/Country}"></Input>
+				</f:content>
+			</f:SimpleForm>
+			<f:SimpleForm title="Details3" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin">
+				<f:content>
+					<Label text="{parts:['i18n>Name','Name'],formatter: 'formatMessage'}"></Label>
+					<Input value="{namedModel>/SweetsSupplier/0/Name}"></Input>					
+					<Label text="ID"></Label>
+					<Input value="{path:'ID', type:'sap.ui.model.type.Float',
+					formatOptions: {
+						minFractionDigits:2
+					},
+					constraints: {
+						maximum:100
+					}}"></Input>
+					<Label text="Country"></Label>
+					<Input value="{Address/Country}"></Input>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Accept" type="Accept" press="onPress" />
+				<Button text="Product List" type="Reject" press="onList" />
+				<Button text="Edit 1" press="Box.show('Box pressed')"/>
+				<Button text="Delete" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
